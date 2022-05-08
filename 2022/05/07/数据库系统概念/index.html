@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数据库系统概念 | 圣堂文献馆</title><meta name="author" content="Yunfei Gao"><meta name="copyright" content="Yunfei Gao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我又开了一个新坑，来简单介绍一下数据库这门课里面我学到的“概念性”的内容，也就是说，SQL和关系代数这样的内容不会被包含在里面！！！ 数据库引言相信大家在大一上学期写C语言的时候接触了文件，用C语言进行文件的读、写操作，这些操作都是由操作系统的文件系统支持的，用文件系统来保留信息会有以下的问题： 文件系统保存文件的问题：数据冗余、不一致相同的数据可能在不同的文件里重复存储，导致存储和访问的开销增大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库系统概念">
+<meta property="og:url" content="http://example.com/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:site_name" content="圣堂文献馆">
+<meta property="og:description" content="我又开了一个新坑，来简单介绍一下数据库这门课里面我学到的“概念性”的内容，也就是说，SQL和关系代数这样的内容不会被包含在里面！！！ 数据库引言相信大家在大一上学期写C语言的时候接触了文件，用C语言进行文件的读、写操作，这些操作都是由操作系统的文件系统支持的，用文件系统来保留信息会有以下的问题： 文件系统保存文件的问题：数据冗余、不一致相同的数据可能在不同的文件里重复存储，导致存储和访问的开销增大">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/AiurBattlefield.jpg">
+<meta property="article:published_time" content="2022-05-07T12:39:28.000Z">
+<meta property="article:modified_time" content="2022-05-08T07:21:18.030Z">
+<meta property="article:author" content="Yunfei Gao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/AiurBattlefield.jpg"><link rel="shortcut icon" href="/img/Zeratul.jpg"><link rel="canonical" href="http://example.com/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库系统概念',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-08 15:21:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Zeratul.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/AiurBattlefield.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">圣堂文献馆</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据库系统概念</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-05-07T12:39:28.000Z" title="Created 2022-05-07 20:39:28">2022-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-05-08T07:21:18.030Z" title="Updated 2022-05-08 15:21:18">2022-05-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据库系统概念"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>我又开了一个新坑，来简单介绍一下数据库这门课里面我学到的“概念性”的内容，也就是说，<strong>SQL和关系代数这样的内容不会被包含在里面！！！</strong></p>
+<h1 id="数据库引言"><a href="#数据库引言" class="headerlink" title="数据库引言"></a>数据库引言</h1><p>相信大家在大一上学期写C语言的时候接触了<strong>文件</strong>，用C语言进行文件的读、写操作，这些操作都是由操作系统的文件系统支持的，用文件系统来保留信息会有以下的问题：</p>
+<h2 id="文件系统保存文件的问题："><a href="#文件系统保存文件的问题：" class="headerlink" title="文件系统保存文件的问题："></a>文件系统保存文件的问题：</h2><h3 id="数据冗余、不一致"><a href="#数据冗余、不一致" class="headerlink" title="数据冗余、不一致"></a>数据冗余、不一致</h3><p>相同的数据可能在不同的文件里重复存储，导致存储和访问的开销增大，也有可能在一个文件中更改数据的时候，另一个文件里没改数据。</p>
+<h3 id="获取数据困难"><a href="#获取数据困难" class="headerlink" title="获取数据困难"></a>获取数据困难</h3><p>比如一个用户想获取所有学生的列表，但源代码里没有能够实现这个功能的函数，只能要程序员再去现写。</p>
+<h3 id="数据隔离"><a href="#数据隔离" class="headerlink" title="数据隔离"></a>数据隔离</h3><p>数据分布在不同的文件中，这些文件的格式不一样，编写应用程序的时候就会有困难。</p>
+<h3 id="完整性问题"><a href="#完整性问题" class="headerlink" title="完整性问题"></a>完整性问题</h3><p>比如说”考试成绩在0-100这个区间之内“就是一个对于数据库存储数据的约束，如果用文件系统实现，写应用程序的时候就需要在用户输入数据的时候就编写一段检测的程序，来强制这个约束。</p>
+<h3 id="原子性问题"><a href="#原子性问题" class="headerlink" title="原子性问题"></a>原子性问题</h3><p>原子性问题主要就是，我们考虑一个银行的管理钱的系统，如果一个小丑去取钱的时候系统突然故障了，比如断电，有可能这个家伙的账户上少了500块，但并没有吐出钱来，或者如果他不是去取钱而是转账，那么那个账号可能什么都没收到。</p>
+<p>所以原子性的意思就是，<strong>一个事务要么就当没发生，要么就做完</strong></p>
+<h3 id="并发性异常"><a href="#并发性异常" class="headerlink" title="并发性异常"></a>并发性异常</h3><p>文件如果同时被多个用户同时访问，学过操作系统的话会知道<strong>互斥</strong>的概念，就无法实现一个资源（这里就是文件）被几个用户同时修改。</p>
+<h3 id="安全性异常"><a href="#安全性异常" class="headerlink" title="安全性异常"></a>安全性异常</h3><p>文件系统需要另行编写用来使<strong>用户看到自己应该看到的东西</strong>。</p>
+<h2 id="数据库、数据库管理系统（DBMS）、数据库系统和三者之间的区别"><a href="#数据库、数据库管理系统（DBMS）、数据库系统和三者之间的区别" class="headerlink" title="数据库、数据库管理系统（DBMS）、数据库系统和三者之间的区别"></a>数据库、数据库管理系统（DBMS）、数据库系统和三者之间的区别</h2><p>Database management system，数据库管理系统，这个概念需要区分好。</p>
+<p><strong>数据库</strong>单指一些相关联的数据的集合。</p>
+<p><strong>数据库管理系统</strong>处于用户和操作系统之间。操作系统又在数据库之上。DBMS的目的主要是提供<strong>方便、高效地存取数据库信息</strong>的途径。也就是说，一个基于数据库的应用程序可以是一个DBMS。DBMS包含以下三个要素：<strong>数据的集合、提供一系列程序来访问数据、是一个方便的系统</strong>，例如XAMPP这样的也是DBMS。</p>
+<p><strong>数据库系统 DBS</strong>呢，包括了数据库、数据库管理系统（及其开发工具），应用程序<br>，和数据库管理员DBA四部分组成。</p>
+<h2 id="数据视图、数据抽象"><a href="#数据视图、数据抽象" class="headerlink" title="数据视图、数据抽象"></a>数据视图、数据抽象</h2><p>不是每一个用户都学过计算机，数据库系统需要提供给用户不同的一些<strong>视图</strong>，视图背后隐藏更底层的实现。隐藏如何实现的有很多好处，比如一个应用程序开发人员可以不需要考虑字节层面上这些数据如何存储的。</p>
+<h3 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h3><p>数据结构，描述实际上这些数据是怎么存的。实际上是用bytes，字节来描述物理层的存储。这样的数据，就是数据库管理员也不想看，编译器就把这一层给藏起来了。</p>
+<h3 id="逻辑层"><a href="#逻辑层" class="headerlink" title="逻辑层"></a>逻辑层</h3><p>描述数据库存储了什么数据以及这些数据之间的关系。C语言中，可以用一个<strong>结构体 struct</strong>来类比这个层次。一个结构体就是一行里面存储的属性们和它们的取值类型（that is：整型？文本？这样的）。</p>
+<h3 id="视图层"><a href="#视图层" class="headerlink" title="视图层"></a>视图层</h3><p>只描述数据库的某个部分。这里的<strong>视图</strong>就是你所看到的东西，通常就是指利用数据库来进行一系列操作的<strong>应用程序</strong>。</p>
+<p><img src="/img/abstraction.jpeg" alt="图片"></p>
+<h2 id="实例和模式"><a href="#实例和模式" class="headerlink" title="实例和模式"></a>实例和模式</h2><p>实例是指一个数据库在某一时刻，里面所存储的信息的集合。数据库的总体设计叫做数据库的模式。</p>
+<h3 id="物理模式"><a href="#物理模式" class="headerlink" title="物理模式"></a>物理模式</h3><p>上面提到了物理层，在物理层描述数据库如何设计的，就是物理模式。</p>
+<h3 id="逻辑模式"><a href="#逻辑模式" class="headerlink" title="逻辑模式"></a>逻辑模式</h3><p>在逻辑层描述数据库的设计。</p>
+<h3 id="物理数据独立性"><a href="#物理数据独立性" class="headerlink" title="物理数据独立性"></a>物理数据独立性</h3><p>一个应用程序，如果能够实现：它的物理模式隐藏在逻辑模式下，在应用程序不受影响的情况下更改，也就是不依赖于物理模式的，就是具有<strong>物理数据独立性。</strong></p>
+<h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><p>数据模型描述了：数据、数据之间的关系、数据的语义和一致性约束。</p>
+<h3 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h3><h3 id="E-R模型"><a href="#E-R模型" class="headerlink" title="E-R模型"></a>E-R模型</h3><p>用一系列的<strong>实体</strong>和<strong>实体之间的关系</strong>描述数据库。</p>
+<h3 id="半结构化模型"><a href="#半结构化模型" class="headerlink" title="半结构化模型"></a>半结构化模型</h3><p>XML 和 JSON属于这样的。XML文件大概可以看成一个txt文件，但里面有标签，就类似于关系数据库的<strong>属性</strong>。</p>
+<h2 id="数据库的语言"><a href="#数据库的语言" class="headerlink" title="数据库的语言"></a>数据库的语言</h2><h3 id="DDL：数据定义语言"><a href="#DDL：数据定义语言" class="headerlink" title="DDL：数据定义语言"></a>DDL：数据定义语言</h3><p>定义了如何实现一个<strong>数据库的模式</strong>。下图介绍了SQL如何定义一个关系<em>Department</em>。</p>
+<p><img src="/img/DDL.jpeg" alt="图片"></p>
+<p>里面有三个属性：dept_name，building，budget，后面跟的是数据的类型：分别是最长为20的字符串，最长为15的字符串，和最长12位，两位小数的小数。</p>
+<p>DDL里面提供了一些实现<strong>一致性约束</strong>的方法。比如可以实现：</p>
+<h4 id="域约束"><a href="#域约束" class="headerlink" title="域约束"></a>域约束</h4><p>每一个属性对应着它可以取的所有值。</p>
+<h4 id="参照完整性"><a href="#参照完整性" class="headerlink" title="参照完整性"></a>参照完整性</h4><p>一个关系，如果它参照了另一个关系的某个属性，那么首先需要保证被参照的关系里有<strong>那个属性里面有对应的值</strong>。比如一张表里有属性<strong>学院名</strong>，而<strong>学院名</strong>又是记录着学校里所有学院的信息的表：<strong>学院</strong>里的主码，那么那张表里的<strong>学院名</strong>必须出现在<strong>学院</strong>这张表里。</p>
+<h4 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h4><p>断言是数据库必须时刻满足的条件，如果系统检测<strong>断言有效</strong>，那么以后<strong>只有满足断言的数据库更新才能发生</strong>。</p>
+<h4 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h4><p>不同类型，角色的用户拥有某部分数据的一些权限，这些权限比如说：<strong>读、写、插入、更新等等</strong></p>
+<h3 id="DML：数据操控语言"><a href="#DML：数据操控语言" class="headerlink" title="DML：数据操控语言"></a>DML：数据操控语言</h3><p>DML定义了如何：</p>
+<p>1.获得数据库里的信息</p>
+<p>2.向数据库里插入信息</p>
+<p>3.删除数据库里的信息</p>
+<p>4.更改数据库里的信息</p>
+<p>DML分两种：<strong>过程化DML和声明式DML</strong>。</p>
+<p>过程化DML：用户<strong>指定获得什么数据以及如何获得</strong>。</p>
+<p>声明式DML：只要求用户指定需要什么数据，<strong>不指明如何获得</strong>。</p>
+<h2 id="事务管理"><a href="#事务管理" class="headerlink" title="事务管理"></a>事务管理</h2><p><strong>事务：</strong>一系列操作，在数据库应用里实现一个功能。</p>
+<p><strong>事务管理组件：</strong>保证数据库在系统出现故障的时候仍然在一个正确的状态下。</p>
+<p><strong>并发管理：</strong>控制并发的事务之间的交互，保证数据库的一致性。</p>
+<h2 id="数据库的用户和管理员"><a href="#数据库的用户和管理员" class="headerlink" title="数据库的用户和管理员"></a>数据库的用户和管理员</h2><h3 id="数据库用户、用户界面"><a href="#数据库用户、用户界面" class="headerlink" title="数据库用户、用户界面"></a>数据库用户、用户界面</h3><p> 用户分成了四种类型：无经验的用户、应用程序员、老练的用户、专门的用户。</p>
+<h4 id="无经验的用户"><a href="#无经验的用户" class="headerlink" title="无经验的用户"></a>无经验的用户</h4><p>通过应用程序和系统进行交互。</p>
+<h4 id="应用程序员："><a href="#应用程序员：" class="headerlink" title="应用程序员："></a>应用程序员：</h4><p>写应用程序。</p>
+<h4 id="老练的用户"><a href="#老练的用户" class="headerlink" title="老练的用户"></a>老练的用户</h4><p>不编写程序和系统交互，它们用<strong>数据库查询语言</strong>来表达需求。</p>
+<h4 id="专门的用户"><a href="#专门的用户" class="headerlink" title="专门的用户"></a>专门的用户</h4><p><strong>编写专门的、不适合传统数据处理框架的数据库应用。</strong></p>
+<h3 id="数据库管理员DBA"><a href="#数据库管理员DBA" class="headerlink" title="数据库管理员DBA"></a>数据库管理员DBA</h3><p>DBA：Database Administrator，他们对系统进行集中控制，DBA的作用包括：</p>
+<h4 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h4><p>通过DDL来书写最初的数据库模式</p>
+<h4 id="存储结构及存取方法定义"><a href="#存储结构及存取方法定义" class="headerlink" title="存储结构及存取方法定义"></a>存储结构及存取方法定义</h4><h4 id="模式及物理组织的修改"><a href="#模式及物理组织的修改" class="headerlink" title="模式及物理组织的修改"></a>模式及物理组织的修改</h4><p>DBA修改模式、物理组织。</p>
+<h4 id="数据访问授权"><a href="#数据访问授权" class="headerlink" title="数据访问授权"></a>数据访问授权</h4><p>不同的用户可以访问各自的数据库部分。</p>
+<h4 id="日常维护"><a href="#日常维护" class="headerlink" title="日常维护"></a>日常维护</h4><p>定期备份、确保正常运转时所需空余磁盘空间、监视数据库运行。</p>
+<h1 id="关系数据库"><a href="#关系数据库" class="headerlink" title="关系数据库"></a>关系数据库</h1><h2 id="简介：表、属性和元组"><a href="#简介：表、属性和元组" class="headerlink" title="简介：表、属性和元组"></a>简介：表、属性和元组</h2><p>首先简单介绍一下关系模型，关系模型主要由<strong>二维表</strong>构成。我们经常见到诸如成绩统计表这样的表格，每一个表有一个名字，表本身就是一个关系。</p>
+<p>成绩统计表里面，每一列可以代表一门课程的成绩，比如有这样一个列可以代表<strong>所有人线性代数的成绩</strong>，引入<strong>属性</strong>的概念，属性就是一个列里的值。</p>
+<h3 id="属性的域（domain）"><a href="#属性的域（domain）" class="headerlink" title="属性的域（domain）"></a>属性的域（domain）</h3><p>每一个属性，都能取一组特定的值。比如说成绩里面的一个数学成绩，它是一个整数，能从0取到100。</p>
+<p>表的每一行可以代表<strong>这个人的所有成绩</strong>。引入<strong>元组</strong>的概念，元组就是一组值的序列。这一行里面有n个值，这一行就是一个n元组。表的一行代表了<strong>一组值之间的联系</strong>，而所有行的集合就是一个表。</p>
+<h2 id="数据库的模式（Schema）"><a href="#数据库的模式（Schema）" class="headerlink" title="数据库的模式（Schema）"></a>数据库的模式（Schema）</h2><p>数据库的<strong>实例</strong>是给定了数据库里面的数据之后数据库的一个快照，也就是说，每当插入一个条目的时候实例都会变化。关系的模式不经常变化，经常由它里面所有的属性和属性里面的域组成。比如说还是常见的一个成绩单，grades(学号，线性代数成绩)就可以是这样的一个模式。</p>
+<h2 id="数据库的码（Key）"><a href="#数据库的码（Key）" class="headerlink" title="数据库的码（Key）"></a>数据库的码（Key）</h2><p>码主要的作用就是来标识一个元组，为了达到这一点，选择这个关系里面的一个或几个属性。比如说大多数学校，学生的学号不会重复，属性“学号”就能唯一标识一个学生。而学生的姓名可能重复，所以不能用“姓名”来唯一标识一个学生。</p>
+<h3 id="超码、候选码和主码"><a href="#超码、候选码和主码" class="headerlink" title="超码、候选码和主码"></a>超码、候选码和主码</h3><p><strong>超码</strong>都可以唯一标识一个元组，它可以是一个或多个属性。超码可以有很多个，比如不光是“学号”可以唯一标识一个学生，“身份证号”也可以，“学号+身份证号”的组合也可以唯一标识。</p>
+<p><strong>候选码</strong>的范围比超码要小，候选码其实就是超码的子集，只不过候选码都是最小的。比如说上面的例子，“身份证+学号”的组合是有冗余的，因为要想标识一个学生，一个学号就够了，身份证号同理。<strong>候选码就是所有”最小“的超码的集合</strong>。注意候选码并不唯一。</p>
+<p><strong>主码</strong>是被数据库管理员选中的一个候选码。在写一个关系的模式（schema）时，<strong>要用下划线标出主码</strong>。</p>
+<h3 id="外码"><a href="#外码" class="headerlink" title="外码"></a>外码</h3><p>一个关系r1的属性集合里可能会有关系r2的主码，这时这个属性在r1上被称为<strong>参照r2的外码</strong>，r1是<strong>参照关系 referencing relationship</strong>，r2是<strong>被参照关系 referenced relationship</strong>。</p>
+<h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><p>这里只会给出一部分关系代数的”符号“的用法，不会过多涉及。<strong>建议多看一些例子，自己用关系代数来写一些查询来熟悉关系代数。SQL同理，这东西一说起来就没边了。</strong></p>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>略，有空可能会补上？</p>
+<h1 id="数据库设计及选择"><a href="#数据库设计及选择" class="headerlink" title="数据库设计及选择"></a>数据库设计及选择</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Yunfei Gao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/">http://example.com/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/AiurBattlefield.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/"><img class="next-cover" src="/img/AiurBattlefield.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">计算机网络（持续更新中）</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Zeratul.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Yunfei Gao</div><div class="author-info__description">来自群星之间的游客啊，你喜欢我创建的文献馆吗？</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">这个博客会持续更新的</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">数据库引言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">文件系统保存文件的问题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%86%97%E4%BD%99%E3%80%81%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据冗余、不一致</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E5%9B%B0%E9%9A%BE"><span class="toc-number">1.1.2.</span> <span class="toc-text">获取数据困难</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9A%94%E7%A6%BB"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据隔离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.4.</span> <span class="toc-text">完整性问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.5.</span> <span class="toc-text">原子性问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E6%80%A7%E5%BC%82%E5%B8%B8"><span class="toc-number">1.1.6.</span> <span class="toc-text">并发性异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E5%BC%82%E5%B8%B8"><span class="toc-number">1.1.7.</span> <span class="toc-text">安全性异常</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88DBMS%EF%BC%89%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%92%8C%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.</span> <span class="toc-text">数据库、数据库管理系统（DBMS）、数据库系统和三者之间的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE%E3%80%81%E6%95%B0%E6%8D%AE%E6%8A%BD%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text">数据视图、数据抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">1.3.1.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%B1%82"><span class="toc-number">1.3.2.</span> <span class="toc-text">逻辑层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E5%B1%82"><span class="toc-number">1.3.3.</span> <span class="toc-text">视图层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E5%92%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">实例和模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">物理模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.2.</span> <span class="toc-text">逻辑模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E6%95%B0%E6%8D%AE%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-number">1.4.3.</span> <span class="toc-text">物理数据独立性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">关系模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-R%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.2.</span> <span class="toc-text">E-R模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E7%BB%93%E6%9E%84%E5%8C%96%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.3.</span> <span class="toc-text">半结构化模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="toc-number">1.6.</span> <span class="toc-text">数据库的语言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DDL%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80"><span class="toc-number">1.6.1.</span> <span class="toc-text">DDL：数据定义语言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">域约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">参照完整性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%AD%E8%A8%80"><span class="toc-number">1.6.1.3.</span> <span class="toc-text">断言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%88%E6%9D%83"><span class="toc-number">1.6.1.4.</span> <span class="toc-text">授权</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DML%EF%BC%9A%E6%95%B0%E6%8D%AE%E6%93%8D%E6%8E%A7%E8%AF%AD%E8%A8%80"><span class="toc-number">1.6.2.</span> <span class="toc-text">DML：数据操控语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-number">1.7.</span> <span class="toc-text">事务管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%94%A8%E6%88%B7%E5%92%8C%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-number">1.8.</span> <span class="toc-text">数据库的用户和管理员</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%94%A8%E6%88%B7%E3%80%81%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2"><span class="toc-number">1.8.1.</span> <span class="toc-text">数据库用户、用户界面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%BB%8F%E9%AA%8C%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number">1.8.1.1.</span> <span class="toc-text">无经验的用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%91%98%EF%BC%9A"><span class="toc-number">1.8.1.2.</span> <span class="toc-text">应用程序员：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%80%81%E7%BB%83%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number">1.8.1.3.</span> <span class="toc-text">老练的用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%93%E9%97%A8%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-number">1.8.1.4.</span> <span class="toc-text">专门的用户</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E5%91%98DBA"><span class="toc-number">1.8.2.</span> <span class="toc-text">数据库管理员DBA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">1.8.2.1.</span> <span class="toc-text">模式定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%8F%8A%E5%AD%98%E5%8F%96%E6%96%B9%E6%B3%95%E5%AE%9A%E4%B9%89"><span class="toc-number">1.8.2.2.</span> <span class="toc-text">存储结构及存取方法定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E5%8F%8A%E7%89%A9%E7%90%86%E7%BB%84%E7%BB%87%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="toc-number">1.8.2.3.</span> <span class="toc-text">模式及物理组织的修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E6%8E%88%E6%9D%83"><span class="toc-number">1.8.2.4.</span> <span class="toc-text">数据访问授权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E7%BB%B4%E6%8A%A4"><span class="toc-number">1.8.2.5.</span> <span class="toc-text">日常维护</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">关系数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B%EF%BC%9A%E8%A1%A8%E3%80%81%E5%B1%9E%E6%80%A7%E5%92%8C%E5%85%83%E7%BB%84"><span class="toc-number">2.1.</span> <span class="toc-text">简介：表、属性和元组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E7%9A%84%E5%9F%9F%EF%BC%88domain%EF%BC%89"><span class="toc-number">2.1.1.</span> <span class="toc-text">属性的域（domain）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%A8%A1%E5%BC%8F%EF%BC%88Schema%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">数据库的模式（Schema）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%A0%81%EF%BC%88Key%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">数据库的码（Key）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%A0%81%E3%80%81%E5%80%99%E9%80%89%E7%A0%81%E5%92%8C%E4%B8%BB%E7%A0%81"><span class="toc-number">2.3.1.</span> <span class="toc-text">超码、候选码和主码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E7%A0%81"><span class="toc-number">2.3.2.</span> <span class="toc-text">外码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="toc-number">2.4.</span> <span class="toc-text">关系代数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL"><span class="toc-number">3.</span> <span class="toc-text">SQL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8F%8A%E9%80%89%E6%8B%A9"><span class="toc-number">4.</span> <span class="toc-text">数据库设计及选择</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" title="数据库系统概念"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库系统概念"/></a><div class="content"><a class="title" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" title="数据库系统概念">数据库系统概念</a><time datetime="2022-05-07T12:39:28.000Z" title="Created 2022-05-07 20:39:28">2022-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="计算机网络（持续更新中）"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络（持续更新中）"/></a><div class="content"><a class="title" href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="计算机网络（持续更新中）">计算机网络（持续更新中）</a><time datetime="2022-04-24T14:38:24.000Z" title="Created 2022-04-24 22:38:24">2022-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/24/%E6%98%9F%E9%99%852%E7%9E%8E%E8%81%8A-1/" title="星际2瞎聊(1)"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="星际2瞎聊(1)"/></a><div class="content"><a class="title" href="/2022/04/24/%E6%98%9F%E9%99%852%E7%9E%8E%E8%81%8A-1/" title="星际2瞎聊(1)">星际2瞎聊(1)</a><time datetime="2022-04-24T13:44:50.000Z" title="Created 2022-04-24 21:44:50">2022-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/24/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="软件工程导论（持续更新）"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程导论（持续更新）"/></a><div class="content"><a class="title" href="/2022/04/24/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="软件工程导论（持续更新）">软件工程导论（持续更新）</a><time datetime="2022-04-24T02:19:45.000Z" title="Created 2022-04-24 10:19:45">2022-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/23/%E6%88%91%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A2%A6%E6%83%B3/" title="我有一个梦想"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我有一个梦想"/></a><div class="content"><a class="title" href="/2022/04/23/%E6%88%91%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A2%A6%E6%83%B3/" title="我有一个梦想">我有一个梦想</a><time datetime="2022-04-23T09:01:22.000Z" title="Created 2022-04-23 17:01:22">2022-04-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Yunfei Gao</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
