@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>UML | 圣堂文献馆</title><meta name="keywords" content="软件专业知识,软件工程导论,UML"><meta name="author" content="Yunfei Gao"><meta name="copyright" content="Yunfei Gao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="注意：在画UML图的时候要知道，UML这个东西答案不唯一，但有的关系之间是什么逻辑这样的还是不能搞混的。 UML 简介UML(Unified Modeling Language，统一建模语言)，是用在软件工程中描述用户的需求的一种方法。比如说用例图，就通过描述外界和系统交互的过程表达了用户的需求。我只会介绍一部分UML图： 用例图元素用例图有这样一些元素： 一是Actor：和系统交互的人或物，或者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UML">
+<meta property="og:url" content="http://example.com/2022/05/31/UML/index.html">
+<meta property="og:site_name" content="圣堂文献馆">
+<meta property="og:description" content="注意：在画UML图的时候要知道，UML这个东西答案不唯一，但有的关系之间是什么逻辑这样的还是不能搞混的。 UML 简介UML(Unified Modeling Language，统一建模语言)，是用在软件工程中描述用户的需求的一种方法。比如说用例图，就通过描述外界和系统交互的过程表达了用户的需求。我只会介绍一部分UML图： 用例图元素用例图有这样一些元素： 一是Actor：和系统交互的人或物，或者">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/AiurBattlefield.jpg">
+<meta property="article:published_time" content="2022-05-31T11:57:01.000Z">
+<meta property="article:modified_time" content="2022-06-07T13:40:26.561Z">
+<meta property="article:author" content="Yunfei Gao">
+<meta property="article:tag" content="软件专业知识">
+<meta property="article:tag" content="软件工程导论">
+<meta property="article:tag" content="UML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/AiurBattlefield.jpg"><link rel="shortcut icon" href="/img/Zeratul.jpg"><link rel="canonical" href="http://example.com/2022/05/31/UML/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'UML',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-07 21:40:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Zeratul.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/AiurBattlefield.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">圣堂文献馆</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">UML</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-05-31T11:57:01.000Z" title="Created 2022-05-31 19:57:01">2022-05-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-06-07T13:40:26.561Z" title="Updated 2022-06-07 21:40:26">2022-06-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="UML"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>注意：在画UML图的时候要知道，UML这个东西答案不唯一，但有的关系之间是什么逻辑这样的还是不能搞混的。</p>
+<h1 id="UML-简介"><a href="#UML-简介" class="headerlink" title="UML 简介"></a>UML 简介</h1><p>UML(Unified Modeling Language，统一建模语言)，是用在软件工程中描述用户的需求的一种方法。比如说用例图，就通过描述外界和系统交互的过程表达了用户的需求。我只会介绍一部分UML图：</p>
+<h1 id="用例图"><a href="#用例图" class="headerlink" title="用例图"></a>用例图</h1><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p>用例图有这样一些元素：</p>
+<p>一是Actor：和系统交互的<strong>人或物</strong>，或者是和这个系统进行协作的<strong>其它系统</strong>。考虑这样一个假想的火车售票系统，来坐车的游客是一个Actor，火车售票系统本身又和火车售票的数据库系统（里面有过往的售票信息和票价信息）相连。</p>
+<p>二是用例（Use Case）：我理解为外界看来，系统进行的一个活动。还是刚刚的火车售票系统的例子，一个游客可以做的活动为：购买单次车票、购买月票等等。这几个就是用例。不光是用户借助系统完成的活动，“系统内部自动执行”的一系列指令也是用例，比如说用户输入一个PIN，系统接下来自己就会进行密码校验。</p>
+<h2 id="元素之间的联系种类"><a href="#元素之间的联系种类" class="headerlink" title="元素之间的联系种类"></a>元素之间的联系种类</h2><p>Actor和用例之间可以有联系，用例和用例之间也会有联系，联系允许我们表述出更麻烦的一个系统需求，比如说：</p>
+<h3 id="用例与Actor之间最基本的关系：关联（Association）"><a href="#用例与Actor之间最基本的关系：关联（Association）" class="headerlink" title="用例与Actor之间最基本的关系：关联（Association）"></a>用例与Actor之间最基本的关系：关联（Association）</h3><p>关联这一关系，表达的意思是<strong>一个Actor的动作创建了这个用例或者说是参与了这个用例</strong>。<br><img src="/img/UML/usecase1.jpeg" alt="图片"></p>
+<h3 id="一个用例发生在一个用例之后：Include"><a href="#一个用例发生在一个用例之后：Include" class="headerlink" title="一个用例发生在一个用例之后：Include"></a>一个用例发生在一个用例之后：Include</h3><p>Include，就是说一个用例发生后，<strong>另一个用例必然在之后发生</strong>。画法是用虚线连接，虚线上面写《include》。箭头从先发生的指向后发生的。</p>
+<p>Include可以表明在系统执行了一个行为之后，紧接着执行的一个行为。比如下图：<br><img src="/img/UML/usecase2.jpeg" alt="图片"></p>
+<h3 id="一个用例可能发生在一个之后，但有条件不发生：Extend"><a href="#一个用例可能发生在一个之后，但有条件不发生：Extend" class="headerlink" title="一个用例可能发生在一个之后，但有条件不发生：Extend"></a>一个用例可能发生在一个之后，但有条件不发生：Extend</h3><p>Extend是说，一个用例发生了，<strong>另一个用例可能发生，也可能不发生</strong>。画法是一个虚线，上面标上《extend》，有箭头，从后发生的用例指向前面发生的用例。</p>
+<p>Extend可以<strong>用来表示一个用例跳转到另一个用例的”条件性“</strong>。比如这个例子：如果说，在完成事务（事务是一个泛化用例，它下面细化出来的任何用例都会有这个“跳转条件”）时，事务如果<strong>出现了故障（图中已标识）</strong>（在银行系统中可能是不正确的PIN），那么会做一系列动作。这里我没写更多的，就可以是像上面的用例图中的extend那里。</p>
+<h3 id="用例细化了一个用例：Generalization"><a href="#用例细化了一个用例：Generalization" class="headerlink" title="用例细化了一个用例：Generalization"></a>用例细化了一个用例：Generalization</h3><p>泛化关系，指的是一个用例“包括了”一系列的用例，比如说，在一个可以完成存取款的银行系统中，<strong>事务</strong>这个用例可以包括许多子用例，比如<strong>存款、取款、转账</strong>等等用例。</p>
+<h1 id="序列图"><a href="#序列图" class="headerlink" title="序列图"></a>序列图</h1><p>序列图表示了几个Actor之间的协作和事情的先后发生顺序。里面的基本元素包括：Actor、生命线、可能发生的分歧。</p>
+<p>看一下川大2021年的考题吧：Please develop a sequence diagram showing the interaction involved when <strong>a student registers for a course</strong>. Courses may have limited enrolment(选课限制), so the registration process must include to <strong>check whether the places are available</strong>. Assume that the student access an electronic course catalog to find out about available courses. </p>
+<p>这个序列图比较重要的一点（感觉更像是唯一的一点），就是如何表示出学生选课时系统查看是否有足够的课余量。</p>
+<h2 id="一个简单的发信息-返回的例子：向课程电子目录查询所有可见的课程"><a href="#一个简单的发信息-返回的例子：向课程电子目录查询所有可见的课程" class="headerlink" title="一个简单的发信息-返回的例子：向课程电子目录查询所有可见的课程"></a>一个简单的发信息-返回的例子：向课程电子目录查询所有可见的课程</h2><p>发信息-返回，需要分清啥叫发送的消息，啥叫返回的消息。对象之间的互相协作可以是通过<strong>调用</strong>的方式实现，如果给局外人看，一次调用可以就是一个程序跟另一个程序说：“你该上了”，发送了这么一条消息。然后后出现的程序执行完了可能返回一些值给第一个程序，就是<strong>返回的消息，用虚线表示</strong>。</p>
+<p><img src="/img/UML/Sequence1.png" alt="图片"></p>
+<h2 id="向前一步：出现分歧结构的例子：查询数据库之后发现能不能选课"><a href="#向前一步：出现分歧结构的例子：查询数据库之后发现能不能选课" class="headerlink" title="向前一步：出现分歧结构的例子：查询数据库之后发现能不能选课"></a>向前一步：出现分歧结构的例子：查询数据库之后发现能不能选课</h2><p>我对于这道题的理解是，选课系统的背后有一个后端数据库，电子目录只是负责和用户进行交互。所以，看这张图，需要的事情有：目录向后端发送消息，询问是否符合选课的限制，有两种可能的回复，也就是两种不同的接下来的执行顺序：</p>
+<p>可以进行选课，在下面的UML图中，有一个新的长方形框框住了两个不同的执行路径。长方形框中间有一条虚线隔开了两个不同的执行顺序，上面是一个分歧，下面又是一个。上面的那个执行顺序就是查询到了选课成功，然后数据库后台返回一个查询成功消息。</p>
+<p>然后电子目录那里应该是反馈给用户一个消息而不是返回消息，<strong>也就是应该画实线，我画错了。</strong></p>
+<p>不能选课的类似，不再赘述。<br><img src="/img/UML/Sequence2.png" alt="图片"></p>
+<h1 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h1><h2 id="基本：一个类的构成"><a href="#基本：一个类的构成" class="headerlink" title="基本：一个类的构成"></a>基本：一个类的构成</h2><p>面向对象里，描述一个类需要类名、类的属性和方法。类名想必不用多说，一个类的属性也需要描述可见性、数据类型。<br>最基本的类里需要有的东西如图：<br><img src="/img/UML/Class1.jpeg" alt="图片"></p>
+<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p>一个属性、方法都有自己的可见性。public指所有类里面都可以通过类名.方法来进行调用，private指只有自己能够直接调用里面的方法、属性。protected指的是只有自己和自己的子类能够调用。</p>
+<h3 id="方法及返回值"><a href="#方法及返回值" class="headerlink" title="方法及返回值"></a>方法及返回值</h3><h2 id="类之间的关系"><a href="#类之间的关系" class="headerlink" title="类之间的关系"></a>类之间的关系</h2><p>类之间的关系是画类图的一个重点。</p>
+<h3 id="Association-联系关系"><a href="#Association-联系关系" class="headerlink" title="Association 联系关系"></a>Association 联系关系</h3><p>联系关系我自己认为比较难理解。如果两个类之间有一个<strong>联系</strong>，那么就代表一个类里有另一个类的实例作为其属性。比如说我做坦克大战联机版，需要有坦克类，坦克大战的客户端，每个玩家的坦克都肯定和自己的客户端关联，就可以在坦克类里写一个属性tankClient，比如每一次坦克开火就调用tankClient发送一个协议报文给服务器。</p>
+<h3 id="Generalization-泛化关系"><a href="#Generalization-泛化关系" class="headerlink" title="Generalization 泛化关系"></a>Generalization 泛化关系</h3><h3 id="Aggregation"><a href="#Aggregation" class="headerlink" title="Aggregation"></a>Aggregation</h3><h1 id="E-R-图"><a href="#E-R-图" class="headerlink" title="E-R 图"></a>E-R 图</h1><p>Entity- Relation图，是UML中的一种描述数据项之间的联系的图。在数据库中，E-R图可以图形化表示数据库的逻辑结构，数据库的专业知识也告诉我们，<strong>实体</strong>、<strong>联系</strong>、<strong>联系集</strong>、<strong>弱实体集</strong>、<strong>属性</strong>等概念。</p>
+<h2 id="基本图形画法"><a href="#基本图形画法" class="headerlink" title="基本图形画法"></a>基本图形画法</h2><h1 id="状态图-State-Diagram"><a href="#状态图-State-Diagram" class="headerlink" title="状态图 State Diagram"></a>状态图 State Diagram</h1><p>UML状态图用来描述一个系统在状态之间的<strong>切换过程以及切换条件</strong>。</p>
+<p>我这次试着根据一个例子来讲，假设我们需要给一个打印机的状态建模：</p>
+<p>When the copy order is not received, the <strong>copier is idle</strong>. Once the <strong>copy order is received</strong>, the copier will enter the <strong>copy state</strong>. After <strong>completing the work</strong> specified in one copy order, the copier will <strong>return to the idle state</strong> and wait for the next copy order; If <strong>no paper is found</strong> during the execution of the copy command, it will enter the <strong>state of paper shortage</strong>, <strong>issue a warning</strong>, wait for the paper to be <strong>loaded</strong>, and <strong>enter the idle state after the paper is full</strong>, ready to receive the copy command; If a <strong>paper jam occurs during copying</strong>, enter the <strong>paper jam state</strong> , issue a warning, wait for the maintenance personnel to remove the fault, and  <strong>return to the idle state after trouble shooting</strong>.</p>
+<p>从文字中，我们需要提炼出<strong>状态名称</strong>以及<strong>状态之间的切换条件</strong>。这些我在文本中加粗标记了。</p>
+<h2 id="简单的例子：正常运行的一个状态转换"><a href="#简单的例子：正常运行的一个状态转换" class="headerlink" title="简单的例子：正常运行的一个状态转换"></a>简单的例子：正常运行的一个状态转换</h2><p>先上图片：<br><img src="/img/UML/State1.png" alt="图片"><br>图片中我们可以看到，这个图从最左侧的圆圈开始执行，那是初态。元素之间链接的箭头代表了状态之间的切换过程，箭头上表明了触发状态切换的条件。</p>
+<p>当一打开打印机的时候，打印机是空闲状态，之后一收到打印订单就进入复制状态，如果正常完成一个订单就回到空闲状态。</p>
+<h2 id="稍微进阶一点：加入分歧"><a href="#稍微进阶一点：加入分歧" class="headerlink" title="稍微进阶一点：加入分歧"></a>稍微进阶一点：加入分歧</h2><p>分歧的符号用菱形表示。下图加入了当打印机进入少纸或者纸张卡住的时候发生的分歧：<br><img src="/img/UML/State2.png" alt="图片"><br>先判断，如果少了纸张，判断后进入缺少纸张状态，这里的状态不光是圆角矩形，下面用直线分出来的是<strong>进入状态同时发生的活动</strong>，在这里是发送警告。等到有人装满纸张之后，回到空闲状态。纸张卡住同理。</p>
+<h1 id="UML-活动图-Activity-Diagram"><a href="#UML-活动图-Activity-Diagram" class="headerlink" title="UML 活动图 Activity Diagram"></a>UML 活动图 Activity Diagram</h1><p>UML活动图的一道例题是：城市的道路坑洼跟踪、修复系统PHTRS。</p>
+<p>市民可以<strong>登录网站</strong>，报告<strong>道路坑洼的位置和严重程度</strong>。当报告了道路坑洼时，系统会在“公共工程部门维修系统”内记录信息，分配一个识别号码，记录坑洼的地址、大小(范围从1 – 10)、位置(路中间、路边等)、地区(根据街道地址确定)和修复优先级(根据坑洼的大小确定)。工作订单数据与每个道路坑洼相关联，并包括道路坑洼位置和大小，修理小组识别号码，修缮小组的人数，分配的设备、修复的小时数，修复的状态(正在修复、已经修复、临时修复、没有修复)， 使用的填充材料和维修的成本(按照所用小时数、使用的人员数、使用的材料和设备来计算)。最后，将创建一个赔偿文件，<strong>以记录由于道路坑洼而造成的损失信息</strong>，包括<strong>公民的姓名、地址、电话号码</strong>、<strong>损坏类型和赔偿金额</strong>。PHTRS是一个在线系统;所有查询都是交互式进行的。</p>
+<p>需要画活动图的题目是：市民报告一个坑洼的活动。先在题目中寻找可能和市民报告坑洼情况的相关描述：市民的查询是交互式的、市民登录网站报告坑洼位置、严重程度，道路坑洼可能造成损失，市民也需要报告这些。图如下：<br><img src="/img/UML/Activity.png" alt="图片"></p>
+<p>看出，图中有市民执行的活动，用圆角矩形表示，可能发生的分歧用菱形表示，判断分歧的<strong>条件写在菱形上</strong>，这个和前面可能不太一样，这样就代表，竖直向下的是符合分歧条件的，而绕一大圈的是不符合条件的，箭头上就不写东西了。</p>
+<p>这个考题没有涉及到一个方面，就是有可能有<strong>并行的活动</strong>，这个需要用长方形表示，长方形指向下方的两个活动。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Yunfei Gao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/31/UML/">http://example.com/2022/05/31/UML/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/">软件专业知识</a><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/">软件工程导论</a><a class="post-meta__tags" href="/tags/UML/">UML</a></div><div class="post_share"><div class="social-share" data-image="/img/AiurBattlefield.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><img class="prev-cover" src="/img/AiurBattlefield.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">6种设计模式</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/"><img class="next-cover" src="/img/COVERS/DBS.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">数据库系统概念</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/04/24/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="软件工程导论（持续更新）"><img class="cover" src="/img/covers/SW.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-24</div><div class="title">软件工程导论（持续更新）</div></div></a></div><div><a href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="6种设计模式"><img class="cover" src="/img/AiurBattlefield.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-04</div><div class="title">6种设计模式</div></div></a></div><div><a href="/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" title="网络协议总结"><img class="cover" src="/img/AiurBattlefield.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-05</div><div class="title">网络协议总结</div></div></a></div><div><a href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="计算机网络（持续更新中）"><img class="cover" src="/img/COVERS/Network.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-24</div><div class="title">计算机网络（持续更新中）</div></div></a></div><div><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" title="数据库系统概念"><img class="cover" src="/img/COVERS/DBS.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-07</div><div class="title">数据库系统概念</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Zeratul.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Yunfei Gao</div><div class="author-info__description">来自群星之间的游客啊，你喜欢我创建的文献馆吗？</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">这个博客会持续更新的</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UML-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">UML 简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">用例图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">2.1.</span> <span class="toc-text">元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E4%B9%8B%E9%97%B4%E7%9A%84%E8%81%94%E7%B3%BB%E7%A7%8D%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">元素之间的联系种类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E4%B8%8EActor%E4%B9%8B%E9%97%B4%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A%E5%85%B3%E8%81%94%EF%BC%88Association%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">用例与Actor之间最基本的关系：关联（Association）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BE%8B%E5%8F%91%E7%94%9F%E5%9C%A8%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BE%8B%E4%B9%8B%E5%90%8E%EF%BC%9AInclude"><span class="toc-number">2.2.2.</span> <span class="toc-text">一个用例发生在一个用例之后：Include</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BE%8B%E5%8F%AF%E8%83%BD%E5%8F%91%E7%94%9F%E5%9C%A8%E4%B8%80%E4%B8%AA%E4%B9%8B%E5%90%8E%EF%BC%8C%E4%BD%86%E6%9C%89%E6%9D%A1%E4%BB%B6%E4%B8%8D%E5%8F%91%E7%94%9F%EF%BC%9AExtend"><span class="toc-number">2.2.3.</span> <span class="toc-text">一个用例可能发生在一个之后，但有条件不发生：Extend</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E7%BB%86%E5%8C%96%E4%BA%86%E4%B8%80%E4%B8%AA%E7%94%A8%E4%BE%8B%EF%BC%9AGeneralization"><span class="toc-number">2.2.4.</span> <span class="toc-text">用例细化了一个用例：Generalization</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">序列图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E4%BF%A1%E6%81%AF-%E8%BF%94%E5%9B%9E%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%9A%E5%90%91%E8%AF%BE%E7%A8%8B%E7%94%B5%E5%AD%90%E7%9B%AE%E5%BD%95%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E5%8F%AF%E8%A7%81%E7%9A%84%E8%AF%BE%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">一个简单的发信息-返回的例子：向课程电子目录查询所有可见的课程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E5%89%8D%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%87%BA%E7%8E%B0%E5%88%86%E6%AD%A7%E7%BB%93%E6%9E%84%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E5%90%8E%E5%8F%91%E7%8E%B0%E8%83%BD%E4%B8%8D%E8%83%BD%E9%80%89%E8%AF%BE"><span class="toc-number">3.2.</span> <span class="toc-text">向前一步：出现分歧结构的例子：查询数据库之后发现能不能选课</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E5%9B%BE"><span class="toc-number">4.</span> <span class="toc-text">类图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%EF%BC%9A%E4%B8%80%E4%B8%AA%E7%B1%BB%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">4.1.</span> <span class="toc-text">基本：一个类的构成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="toc-number">4.1.1.</span> <span class="toc-text">可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%8F%8A%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">4.1.2.</span> <span class="toc-text">方法及返回值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">4.2.</span> <span class="toc-text">类之间的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Association-%E8%81%94%E7%B3%BB%E5%85%B3%E7%B3%BB"><span class="toc-number">4.2.1.</span> <span class="toc-text">Association 联系关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generalization-%E6%B3%9B%E5%8C%96%E5%85%B3%E7%B3%BB"><span class="toc-number">4.2.2.</span> <span class="toc-text">Generalization 泛化关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aggregation"><span class="toc-number">4.2.3.</span> <span class="toc-text">Aggregation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#E-R-%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">E-R 图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2%E7%94%BB%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text">基本图形画法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%9B%BE-State-Diagram"><span class="toc-number">6.</span> <span class="toc-text">状态图 State Diagram</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%AD%A3%E5%B8%B8%E8%BF%90%E8%A1%8C%E7%9A%84%E4%B8%80%E4%B8%AA%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2"><span class="toc-number">6.1.</span> <span class="toc-text">简单的例子：正常运行的一个状态转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8D%E5%BE%AE%E8%BF%9B%E9%98%B6%E4%B8%80%E7%82%B9%EF%BC%9A%E5%8A%A0%E5%85%A5%E5%88%86%E6%AD%A7"><span class="toc-number">6.2.</span> <span class="toc-text">稍微进阶一点：加入分歧</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#UML-%E6%B4%BB%E5%8A%A8%E5%9B%BE-Activity-Diagram"><span class="toc-number">7.</span> <span class="toc-text">UML 活动图 Activity Diagram</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" title="网络协议总结"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网络协议总结"/></a><div class="content"><a class="title" href="/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" title="网络协议总结">网络协议总结</a><time datetime="2022-06-05T05:51:08.000Z" title="Created 2022-06-05 13:51:08">2022-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="6种设计模式"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="6种设计模式"/></a><div class="content"><a class="title" href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="6种设计模式">6种设计模式</a><time datetime="2022-06-04T08:23:45.000Z" title="Created 2022-06-04 16:23:45">2022-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/31/UML/" title="UML"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="UML"/></a><div class="content"><a class="title" href="/2022/05/31/UML/" title="UML">UML</a><time datetime="2022-05-31T11:57:01.000Z" title="Created 2022-05-31 19:57:01">2022-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" title="数据库系统概念"><img src="/img/COVERS/DBS.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库系统概念"/></a><div class="content"><a class="title" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" title="数据库系统概念">数据库系统概念</a><time datetime="2022-05-07T12:39:28.000Z" title="Created 2022-05-07 20:39:28">2022-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="计算机网络（持续更新中）"><img src="/img/COVERS/Network.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络（持续更新中）"/></a><div class="content"><a class="title" href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="计算机网络（持续更新中）">计算机网络（持续更新中）</a><time datetime="2022-04-24T14:38:24.000Z" title="Created 2022-04-24 22:38:24">2022-04-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Yunfei Gao</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

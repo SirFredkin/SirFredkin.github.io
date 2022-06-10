@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>网络协议总结 | 圣堂文献馆</title><meta name="keywords" content="软件专业知识,计算机网络"><meta name="author" content="Yunfei Gao"><meta name="copyright" content="Yunfei Gao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="协议：规定了什么计算机网络中一个很大部分就是协议，收发双方通过规定报文该怎么写，按照什么顺序进行发送，就可以实现网络的很多不可思议的功能。但协议的存在，比如说几乎所有协议都有Header，Header会占用空间影响发送速度，也会浪费一定的资源。 应用层协议：HTTP、SMTP等HTTP传输层协议：TCP、UDP网络层协议：IP、DHCP、ICMP、BGP、OSPF等IP：因特网协议首先介绍下IP协">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络协议总结">
+<meta property="og:url" content="http://example.com/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="圣堂文献馆">
+<meta property="og:description" content="协议：规定了什么计算机网络中一个很大部分就是协议，收发双方通过规定报文该怎么写，按照什么顺序进行发送，就可以实现网络的很多不可思议的功能。但协议的存在，比如说几乎所有协议都有Header，Header会占用空间影响发送速度，也会浪费一定的资源。 应用层协议：HTTP、SMTP等HTTP传输层协议：TCP、UDP网络层协议：IP、DHCP、ICMP、BGP、OSPF等IP：因特网协议首先介绍下IP协">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/AiurBattlefield.jpg">
+<meta property="article:published_time" content="2022-06-05T05:51:08.000Z">
+<meta property="article:modified_time" content="2022-06-09T16:22:15.117Z">
+<meta property="article:author" content="Yunfei Gao">
+<meta property="article:tag" content="软件专业知识">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/AiurBattlefield.jpg"><link rel="shortcut icon" href="/img/Zeratul.jpg"><link rel="canonical" href="http://example.com/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网络协议总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-10 00:22:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Zeratul.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/AiurBattlefield.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">圣堂文献馆</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">网络协议总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-06-05T05:51:08.000Z" title="Created 2022-06-05 13:51:08">2022-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-06-09T16:22:15.117Z" title="Updated 2022-06-10 00:22:15">2022-06-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="网络协议总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="协议：规定了什么"><a href="#协议：规定了什么" class="headerlink" title="协议：规定了什么"></a>协议：规定了什么</h1><p>计算机网络中一个很大部分就是协议，收发双方通过规定报文该怎么写，按照什么顺序进行发送，就可以实现网络的很多不可思议的功能。但协议的存在，比如说几乎所有协议都有Header，Header会占用空间影响发送速度，也会浪费一定的资源。</p>
+<h2 id="应用层协议：HTTP、SMTP等"><a href="#应用层协议：HTTP、SMTP等" class="headerlink" title="应用层协议：HTTP、SMTP等"></a>应用层协议：HTTP、SMTP等</h2><h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><h2 id="传输层协议：TCP、UDP"><a href="#传输层协议：TCP、UDP" class="headerlink" title="传输层协议：TCP、UDP"></a>传输层协议：TCP、UDP</h2><h2 id="网络层协议：IP、DHCP、ICMP、BGP、OSPF等"><a href="#网络层协议：IP、DHCP、ICMP、BGP、OSPF等" class="headerlink" title="网络层协议：IP、DHCP、ICMP、BGP、OSPF等"></a>网络层协议：IP、DHCP、ICMP、BGP、OSPF等</h2><h3 id="IP：因特网协议"><a href="#IP：因特网协议" class="headerlink" title="IP：因特网协议"></a>IP：因特网协议</h3><p>首先介绍下IP协议的一些字段：</p>
+<p><strong>版本号</strong>，这个决定了如何解读IP数据报里的信息。</p>
+<p><strong>头长度</strong>，这个使用4个比特来告诉你这个header的长度，<strong>一个IP数据报的header长度一般为20个字节</strong></p>
+<p><strong>服务类型</strong>，比如说：有的数据报需要是实时的（比如IP电话），有的是不要求实时的（FTP来传文件）。这样可以指定一定的优先级。</p>
+<p><strong>数据报长度</strong>，header+Data，由于更下层的以太网的要求，一般情况下数据报长度不会大于1500字节。</p>
+<p><strong>标识符、标记位（Flags）、分片偏移量（Fragmentation Offset）</strong>，由于以太网要求一个数据报不应大于1500字节，需要将数据报分成几段。具体操作是，先去掉header的大小，这个数据报就只剩下数据域Data了，之后进行Data的划分，Data/1480，余下的是最后一个包。（1480+header大小20字节刚好1500，符合以太网要求）。注意这里为啥只是20，不需要再考虑其他协议（比如TCP），因为更“高层”的协议报文（包括首部）仅作为数据存在IP的数据报里面。</p>
+<p>扯远了，偏移量就是，分成了很多个fragment之后，前面的fragment的字节数/8（除8只是为了数小一点）。</p>
+<p><strong>TTL</strong>，保证数据报不在这个网络里无限地转发。</p>
+<p><strong>协议</strong>，指明了传输层是啥协议。</p>
+<p><strong>首部校验和</strong>,检查一个IP数据报对不对。</p>
+<p><strong>source IP、dest IP</strong>：就是源IP和要去的IP地址。</p>
+<p><strong>Options</strong>：提供可选项，为了IP首部的扩展。</p>
+<p><strong>Data</strong>：数据。一个IP数据报的数据可能是TCP的报文、UDP的报文、或者ICMP的报文。</p>
+<h3 id="DHCP：动态主机配置"><a href="#DHCP：动态主机配置" class="headerlink" title="DHCP：动态主机配置"></a>DHCP：动态主机配置</h3><p>回想一下，DHCP主要的目的是为了给一个刚连进网的主机分配一个IP地址。</p>
+<p>DHCP这个协议主要得讲它的4个步骤：</p>
+<p>1.<strong>发现一个DHCP服务器</strong>：这时我的主机进行广播，询问有没有DHCP服务器，这里source IP不知道，所以进行广播。所以报文里，source IP填的就是255.255.255.255，一个广播地址，向子网进行广播。也不知道自己主机的IP，这里填0.0.0.0，意思是“this host”</p>
+<p>2.<strong>DHCP服务器给你一个IP offer</strong>：DHCP服务器接到了一个广播请求，进行回复。回复也是一个广播的：255.255.255.255，这里的DHCP offer数据报也会有这样的几个域：<strong>lease time 有效时间</strong>，代表了offer提供给你的IP地址在这个时间内有效；<strong>src</strong>：服务器有自己的IP，所以这里就是服务器的IP地址。还有一个区域叫yiaddr还是啥的，就是提供的IP地址。</p>
+<p>3.DHCP 请求：客户端从Offer里挑一个IP，向对应的服务器发送请求。记住这个时候自己还没有IP地址，所以src IP还是0.0.0.0，但知道了dest IP之后可以将目标设置为DHCP 服务器。</p>
+<p>4.DHCP ACK：服务器返回确认消息。</p>
+<h3 id="ICMP：互联网控制信息协议"><a href="#ICMP：互联网控制信息协议" class="headerlink" title="ICMP：互联网控制信息协议"></a>ICMP：互联网控制信息协议</h3><p>ICMP的报文是在IP的数据报里面输送的。ICMP报文有13个种类，这里就不列举了。ICMP指令都有的是两个字段：type和code，还有IP数据报的前8个字节（IP可能发生错误，大多数时候这些错导致我们需要一个ICMP报文。这8个字节能帮我们纠错）</p>
+<p>说两个大家比较熟悉的指令：ping和traceroute。ping可以向目标IP的主机发送几个32字节的包，查看回复的时间。traceroute是看自己到目标之间的路由情况，也就是一路的IP地址都会显示出来。</p>
+<p>Ping指令的实现，是发送一个ICMP type=8，code=0的报文给指定的主机。主机收到报文，回复一个type 0，code 0的echo报文（0，0是专门用来回复ping的ICMP）。</p>
+<p>Traceroute指令的实现，是<strong>基于TTL expired这个消息实现的</strong>。主机发送一系列包，TTL分别为1，2…递增，路由器接到一个TTL刚好到期，死掉的包会回复一句TTL expired（11，0）。那么Traceroute的发起者如何知道停止发送包呢？就是有一个ICMP消息叫：Port Unreachable。</p>
+<h3 id="BGP：Border-Gateway-Protocol"><a href="#BGP：Border-Gateway-Protocol" class="headerlink" title="BGP：Border Gateway Protocol"></a>BGP：Border Gateway Protocol</h3><p>回想一下BGP是做什么的：BGP有iBGP，负责将路由的道路转发到自己AS内的其他路由器的，还有eBGP，负责获得其他AS的路径，从两个AS联通的那个地方获得。</p>
+<p>BGP的报文通过TCP连接发送，有几种信息：</p>
+<p>OPEN：开启TCP连接。</p>
+<p>UPDATE：转发一条新的路径或者删除旧的。</p>
+<p>KEEPALIVE：即便没有update，也暂时开着链接。</p>
+<p>NOTIFICATION：用于关闭连接、通知前一个消息的错误。</p>
+<h2 id="链路层协议："><a href="#链路层协议：" class="headerlink" title="链路层协议："></a>链路层协议：</h2><h3 id="ARP："><a href="#ARP：" class="headerlink" title="ARP："></a>ARP：</h3><p>ARP表由三个域组成，IP地址-MAC地址-TTL。计算机内的ARP模组通过ARP表来进行对应。如果本机的ARP表没有记录，那么发送一个特殊的包ARP packet，ARP packet有这样几个域：发送者和接收者的IP、MAC地址。查询和回复的包结构一样。查询的对象是整个子网。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Yunfei Gao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/">http://example.com/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/">软件专业知识</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div><div class="post_share"><div class="social-share" data-image="/img/AiurBattlefield.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><img class="next-cover" src="/img/AiurBattlefield.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">6种设计模式</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="计算机网络（持续更新中）"><img class="cover" src="/img/COVERS/Network.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-24</div><div class="title">计算机网络（持续更新中）</div></div></a></div><div><a href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="6种设计模式"><img class="cover" src="/img/AiurBattlefield.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-04</div><div class="title">6种设计模式</div></div></a></div><div><a href="/2022/05/31/UML/" title="UML"><img class="cover" src="/img/AiurBattlefield.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-31</div><div class="title">UML</div></div></a></div><div><a href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" title="数据库系统概念"><img class="cover" src="/img/COVERS/DBS.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-07</div><div class="title">数据库系统概念</div></div></a></div><div><a href="/2022/04/24/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" title="软件工程导论（持续更新）"><img class="cover" src="/img/covers/SW.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-24</div><div class="title">软件工程导论（持续更新）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Zeratul.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Yunfei Gao</div><div class="author-info__description">来自群星之间的游客啊，你喜欢我创建的文献馆吗？</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">这个博客会持续更新的</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%EF%BC%9A%E8%A7%84%E5%AE%9A%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">协议：规定了什么</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%9AHTTP%E3%80%81SMTP%E7%AD%89"><span class="toc-number">1.1.</span> <span class="toc-text">应用层协议：HTTP、SMTP等</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP"><span class="toc-number">1.1.1.</span> <span class="toc-text">HTTP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%9ATCP%E3%80%81UDP"><span class="toc-number">1.2.</span> <span class="toc-text">传输层协议：TCP、UDP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%9AIP%E3%80%81DHCP%E3%80%81ICMP%E3%80%81BGP%E3%80%81OSPF%E7%AD%89"><span class="toc-number">1.3.</span> <span class="toc-text">网络层协议：IP、DHCP、ICMP、BGP、OSPF等</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IP%EF%BC%9A%E5%9B%A0%E7%89%B9%E7%BD%91%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text">IP：因特网协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DHCP%EF%BC%9A%E5%8A%A8%E6%80%81%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.2.</span> <span class="toc-text">DHCP：动态主机配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ICMP%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.3.3.</span> <span class="toc-text">ICMP：互联网控制信息协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP%EF%BC%9ABorder-Gateway-Protocol"><span class="toc-number">1.3.4.</span> <span class="toc-text">BGP：Border Gateway Protocol</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">链路层协议：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP%EF%BC%9A"><span class="toc-number">1.4.1.</span> <span class="toc-text">ARP：</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" title="网络协议总结"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网络协议总结"/></a><div class="content"><a class="title" href="/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" title="网络协议总结">网络协议总结</a><time datetime="2022-06-05T05:51:08.000Z" title="Created 2022-06-05 13:51:08">2022-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="6种设计模式"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="6种设计模式"/></a><div class="content"><a class="title" href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="6种设计模式">6种设计模式</a><time datetime="2022-06-04T08:23:45.000Z" title="Created 2022-06-04 16:23:45">2022-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/31/UML/" title="UML"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="UML"/></a><div class="content"><a class="title" href="/2022/05/31/UML/" title="UML">UML</a><time datetime="2022-05-31T11:57:01.000Z" title="Created 2022-05-31 19:57:01">2022-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" title="数据库系统概念"><img src="/img/COVERS/DBS.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库系统概念"/></a><div class="content"><a class="title" href="/2022/05/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" title="数据库系统概念">数据库系统概念</a><time datetime="2022-05-07T12:39:28.000Z" title="Created 2022-05-07 20:39:28">2022-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="计算机网络（持续更新中）"><img src="/img/COVERS/Network.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络（持续更新中）"/></a><div class="content"><a class="title" href="/2022/04/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" title="计算机网络（持续更新中）">计算机网络（持续更新中）</a><time datetime="2022-04-24T14:38:24.000Z" title="Created 2022-04-24 22:38:24">2022-04-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Yunfei Gao</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
