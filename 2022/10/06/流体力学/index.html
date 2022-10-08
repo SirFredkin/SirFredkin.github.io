@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>流体力学 | 圣堂文献馆</title><meta name="keywords" content="力学-软件基础知识"><meta name="author" content="Yunfei Gao"><meta name="copyright" content="Yunfei Gao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言终于开始写力学的内容力！有哪里写错了记得叫我改（bushi）。这里只写了考试的知识点，要说看了我这个之后，还是不可能从头学懂流体力学的。 流体静力学牛顿内摩擦定律这个按理说不该出现在这里，就是简单介绍下，后面对于“粘度”这个东西肯定是还要讲讲的。 牛顿内摩擦定律只适用于牛顿流体(Newtonian Fluid)，即：剪应变和速度的梯度成正比的流体。这也是内摩擦定律的主要公式： $$ \tau">
+<meta property="og:type" content="article">
+<meta property="og:title" content="流体力学">
+<meta property="og:url" content="http://example.com/2022/10/06/%E6%B5%81%E4%BD%93%E5%8A%9B%E5%AD%A6/index.html">
+<meta property="og:site_name" content="圣堂文献馆">
+<meta property="og:description" content="前言终于开始写力学的内容力！有哪里写错了记得叫我改（bushi）。这里只写了考试的知识点，要说看了我这个之后，还是不可能从头学懂流体力学的。 流体静力学牛顿内摩擦定律这个按理说不该出现在这里，就是简单介绍下，后面对于“粘度”这个东西肯定是还要讲讲的。 牛顿内摩擦定律只适用于牛顿流体(Newtonian Fluid)，即：剪应变和速度的梯度成正比的流体。这也是内摩擦定律的主要公式： $$ \tau">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/AiurBattlefield.jpg">
+<meta property="article:published_time" content="2022-10-06T07:20:13.000Z">
+<meta property="article:modified_time" content="2022-10-08T02:34:21.133Z">
+<meta property="article:author" content="Yunfei Gao">
+<meta property="article:tag" content="力学-软件基础知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/AiurBattlefield.jpg"><link rel="shortcut icon" href="/img/Zeratul.jpg"><link rel="canonical" href="http://example.com/2022/10/06/%E6%B5%81%E4%BD%93%E5%8A%9B%E5%AD%A6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '流体力学',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-08 10:34:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Zeratul.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/AiurBattlefield.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">圣堂文献馆</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">流体力学</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-10-06T07:20:13.000Z" title="Created 2022-10-06 15:20:13">2022-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-10-08T02:34:21.133Z" title="Updated 2022-10-08 10:34:21">2022-10-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="流体力学"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>终于开始写力学的内容力！有哪里写错了记得叫我改（bushi）。这里只写了考试的知识点，要说看了我这个之后，还是不可能从头学懂流体力学的。</p>
+<h1 id="流体静力学"><a href="#流体静力学" class="headerlink" title="流体静力学"></a>流体静力学</h1><h2 id="牛顿内摩擦定律"><a href="#牛顿内摩擦定律" class="headerlink" title="牛顿内摩擦定律"></a>牛顿内摩擦定律</h2><p>这个按理说不该出现在这里，就是简单介绍下，后面对于“粘度”这个东西肯定是还要讲讲的。</p>
+<p>牛顿内摩擦定律只适用于牛顿流体(Newtonian Fluid)，即：剪应变和速度的梯度成正比的流体。这也是内摩擦定律的主要公式：</p>
+<p>$$ \tau = \mu \frac{\partial u}{\partial y}$$</p>
+<p>牛顿内摩擦定律指出：流体无法承受剪应力，流体的粘度只会影响流动的速度，无法使流动停下来。</p>
+<h2 id="压力相关"><a href="#压力相关" class="headerlink" title="压力相关"></a>压力相关</h2><p>对于一个点的压强，有：</p>
+<p>$$ p_x = p_y = p_z = p$$</p>
+<p>即：x,y,z 各个方向的压强相等。</p>
+<h3 id="流体平衡的微分方程（欧拉平衡方程）："><a href="#流体平衡的微分方程（欧拉平衡方程）：" class="headerlink" title="流体平衡的微分方程（欧拉平衡方程）："></a>流体平衡的微分方程（欧拉平衡方程）：</h3><p>为了大家读着方便懂，我把方程写成最简单的形式，在xyz三个方向的方程：</p>
+<p>$$ f_x - \frac{1}{\rho} \frac{\partial p}{\partial x} = 0$$<br>$$ f_y - \frac{1}{\rho} \frac{\partial p}{\partial y} = 0$$<br>$$ f_z - \frac{1}{\rho} \frac{\partial p}{\partial z} = 0$$</p>
+<p>其中$\rho$ 是密度，$f_x$这些是体积力（例如g）</p>
+<h3 id="静止状态下，压力微元的大小："><a href="#静止状态下，压力微元的大小：" class="headerlink" title="静止状态下，压力微元的大小："></a>静止状态下，压力微元的大小：</h3><p>$$dp = \rho (f_x dx+f_y dy+ f_z dz)$$</p>
+<p>对这个$dp$进行积分，即可得到压力在这个空间的分布。</p>
+<p>基本上这样做就可以知道压力分布，从而解出一系列问题了。不过最好还是了解一下比如说一些特殊情况下的解法：</p>
+<h3 id="均匀加速状态下的压力分布："><a href="#均匀加速状态下的压力分布：" class="headerlink" title="均匀加速状态下的压力分布："></a>均匀加速状态下的压力分布：</h3><p><img src="/img/Fluid/a.jpeg" alt="此处图片"></p>
+<p>如图的情况，流体受重力，同时小车有一个水平的加速度a。可以写出dp此时的方程：</p>
+<p>$$dp = \rho(-adx-gdz)$$</p>
+<p>这样就求出了p的分布。注意积分后会出现常数，这里需要用自由液体表面的边界条件来解决，即与空气接触的点压强为大气压。</p>
+<p>还有一个很有用的是：液体形成了一个倾角$\alpha$,存在公式：</p>
+<p>$$\tan \alpha = \frac{a_x}{g}$$</p>
+<h3 id="匀速转动的容器"><a href="#匀速转动的容器" class="headerlink" title="匀速转动的容器"></a>匀速转动的容器</h3><p><img src="/img/Fluid/b.jpeg" alt="此处图片"></p>
+<p>这样的情况，受力情况为：</p>
+<p>$f_r = \omega^2 r , f_z = -g$</p>
+<p>$$dp = \rho(r\omega^2 dr - gdz)$$</p>
+<p>下面是压强的分布：</p>
+<p>$$p = \rho g (\frac{r^2\omega^2}{2g}-z)+C_3$$</p>
+<p>等压面的方程：</p>
+<p>$$z = \frac{1}{2g}r^2\omega^2 + C_4$$</p>
+<h2 id="静水压大小计算"><a href="#静水压大小计算" class="headerlink" title="静水压大小计算"></a>静水压大小计算</h2><h3 id="平面情况"><a href="#平面情况" class="headerlink" title="平面情况"></a>平面情况</h3><p>$$P = p_0 A + \gamma h_c A$$</p>
+<p>其中hc为形心所在的高度（距水面垂直高度），$\gamma$为比重。</p>
+<p>还有一个重要的，是压力作为一个等效的集中力作用在哪。</p>
+<p>比如一个斜着放的平面,</p>
+<p>$$L_d = L_c + \frac{Ic}{L_c A}$$</p>
+<p>复习下一些常见的图形的$I_c$:</p>
+<p>长方形，有$I_c = \frac{BL^3}{12}$</p>
+<p>圆形，有$I_c = \frac{\pi R^4}{4}$</p>
+<h3 id="曲面情况"><a href="#曲面情况" class="headerlink" title="曲面情况"></a>曲面情况</h3><h1 id="流体动力学"><a href="#流体动力学" class="headerlink" title="流体动力学"></a>流体动力学</h1><p>首先我们需要对于流动进行分类：</p>
+<p>理想流体和粘性流体：粘度$\mu$是否为0</p>
+<p>可压缩流体和不可压缩流体：$\rho = or \neq const$</p>
+<p>稳定和不稳定：$\frac{\partial}{\partial t} = or \neq 0$</p>
+<p>均匀流动和不均匀流动：</p>
+<p>流动的维度：1维、2维、3维</p>
+<h2 id="迹线"><a href="#迹线" class="headerlink" title="迹线"></a>迹线</h2><p>描述的是流场中一个质点的运动轨迹</p>
+<p>求法：已知$v_x$和$v_y$的方程，解微分方程，之后得到x，y关于t的参数方程，消去t即可。</p>
+<h2 id="流线"><a href="#流线" class="headerlink" title="流线"></a>流线</h2><p>描述的是某一时刻，许多质点的速度矢量。</p>
+<p>流线方程：</p>
+<p>$$\frac{dx}{v_x} = \frac{dy}{v_y}$$</p>
+<h2 id="连续性方程（重要）"><a href="#连续性方程（重要）" class="headerlink" title="连续性方程（重要）"></a>连续性方程（重要）</h2><p>假设对于一个管流，流体：</p>
+<p>1.不能从管壁流出去</p>
+<p>2.流体是连续介质</p>
+<p>3.质量不可能变成能量</p>
+<p>鉴于在本课程中，密度是常数，经常有这样的条件：</p>
+<p>$$V_1 A_1 = V_2 A_2$$</p>
+<h2 id="伯努利方程"><a href="#伯努利方程" class="headerlink" title="伯努利方程"></a>伯努利方程</h2><p>做过很多简化(稳定、不可压缩、理想、沿着流线流动、只有重力)之后，最基本的形式：</p>
+<p>$$z_1+ \frac{p_1}{\rho g}+\frac{V_1^2}{2g} = z_2+ \frac{p_2}{\rho g}+\frac{V_2^2}{2g}$$</p>
+<p>经常在两个平面之间列写。</p>
+<h3 id="伯努利方程的应用1：曲率很小：-r-rightarrow-inf"><a href="#伯努利方程的应用1：曲率很小：-r-rightarrow-inf" class="headerlink" title="伯努利方程的应用1：曲率很小：$r \rightarrow \inf$"></a>伯努利方程的应用1：曲率很小：$r \rightarrow \inf$</h3><p>$$z_1+\frac{p_1}{\rho g} = z_2 + \frac{p_2}{\rho g}$$</p>
+<h3 id="伯努利方程的应用2：在整个流场机械能守恒的话："><a href="#伯努利方程的应用2：在整个流场机械能守恒的话：" class="headerlink" title="伯努利方程的应用2：在整个流场机械能守恒的话："></a>伯努利方程的应用2：在整个流场机械能守恒的话：</h3><p>$$Vr = C_1$$</p>
+<h2 id="动量方程"><a href="#动量方程" class="headerlink" title="动量方程"></a>动量方程</h2><p>这个方程揭示了合外力大小和在该方向上流体速度改变的量。</p>
+<p>比如在x方向上有：</p>
+<p>$$\rho Q(u_2 - u_1) = \Sigma F_x$$</p>
+<p>其中Q是流量。</p>
+<p>做这方面的题的时候要注意，作为流体，静水压给墙壁有压力，自身就会收到反作用力。需要考虑进去。</p>
+<h2 id="动量矩方程"><a href="#动量矩方程" class="headerlink" title="动量矩方程"></a>动量矩方程</h2><p>和动量方程形式很相似，如果说不考虑流量对于面积的变化，则形式较为简单：</p>
+<p>$$\rho Q_1 (\vec{r_1} \times \vec{V_1}) - \rho Q_2 (\vec{r_2} \times \vec{V_2}) = \Sigma (\vec{r} \times \vec{F})$$</p>
+<h2 id="伯努利方程的补充："><a href="#伯努利方程的补充：" class="headerlink" title="伯努利方程的补充："></a>伯努利方程的补充：</h2><h3 id="雷诺数-Re"><a href="#雷诺数-Re" class="headerlink" title="雷诺数 Re"></a>雷诺数 Re</h3><p>$$Re = \frac{\rho Vd}{\mu}$$</p>
+<p>其中d是水力直径，与截面形状有关。</p>
+<p>$$d = \frac{4A}{\chi}$$</p>
+<p>其中A是面积，$\chi$是湿周，指固体被流体浸湿的周长。例如：圆管是$\chi = \pi d$，长方形是$\chi = 2*(a+b)$，套管是：$\chi = \pi d_1+\pi d_2$。水中有很多管是$\chi = S_1 S_2 - \pi d^2/4$</p>
+<p>雷诺数和伯努利方程的联系在于，层流状态下Loss Factor的变化：</p>
+<p>$$\lambda = \frac{64}{Re}$$</p>
+<p>湍流的情况下，$\lambda$ 是Re的函数。</p>
+<h3 id="沿程能量损失"><a href="#沿程能量损失" class="headerlink" title="沿程能量损失"></a>沿程能量损失</h3><p>这是一个修正项，因为流动的方向上一直存在着切应力阻碍流动。</p>
+<p>$$h_f = \lambda \frac{l}{d}\frac{V^2}{2g}$$</p>
+<p>$\lambda$的值在上面讨论了怎么求。</p>
+<h3 id="局部能量损失"><a href="#局部能量损失" class="headerlink" title="局部能量损失"></a>局部能量损失</h3><p>由于流动的时候比如截面大小突然变化，在这个交界处出现了能量损失。</p>
+<p>$$h_j = K\frac{V^2}{2g}$$</p>
+<p>其中K为一个系数。下面将对它进行讨论</p>
+<h3 id="对于局部能量损失，K的取值"><a href="#对于局部能量损失，K的取值" class="headerlink" title="对于局部能量损失，K的取值"></a>对于局部能量损失，K的取值</h3><p>众所周知，管道直径的突然膨胀、收缩都会导致能量的损失。</p>
+<ol>
+<li>管道突然变大</li>
+</ol>
+<p>$$K_1 = (1-\frac{A_1}{A_2})^2$$</p>
+<p>对于慢慢变大，直接有经验公式来讨论$h_j$:</p>
+<p>$$h_j = \phi \frac{(V_1-V_2)^2}{2g}$$</p>
+<ol start="2">
+<li>管道突然变小</li>
+</ol>
+<p>$$K_2 = 0.5(1-\frac{A_2}{A_1})^2$$</p>
+<h3 id="加入这俩之后的伯努利方程："><a href="#加入这俩之后的伯努利方程：" class="headerlink" title="加入这俩之后的伯努利方程："></a>加入这俩之后的伯努利方程：</h3><p>$$z_1+\frac{p_1}{\rho g}+\alpha \frac{V_1^2}{2g} = z_2+\frac{p_2}{\rho g}+\alpha \frac{V_2^2}{2g}+ h_w + E_m$$</p>
+<p>其中$H_w$是能量损失,$E_m$是外界输入/输出的能量。</p>
+<h3 id="关于能量的损失：其他"><a href="#关于能量的损失：其他" class="headerlink" title="关于能量的损失：其他"></a>关于能量的损失：其他</h3><p>管道“串联”：</p>
+<ol>
+<li>Q对于每一个管道都相等</li>
+<li>列写伯努利方程的时候，最终的H是所有管道损失的和</li>
+</ol>
+<p>管道“并联”：</p>
+<ol>
+<li>起始点的$Q = Q_1+Q_2$</li>
+<li>对于每个管子，都有:$h_{w1} = h_{w2}$</li>
+<li>每个管子的流量存在一个比值关系：<br>$$\frac{Q_1}{Q_2} = \sqrt{\frac{\lambda_2 \frac{l_2}{d_2}+(\Sigma K)_2}{\lambda_1 \frac{l_1}{d_1}+(\Sigma K)_1}}\frac{A_1}{A_2}$$</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Yunfei Gao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/10/06/%E6%B5%81%E4%BD%93%E5%8A%9B%E5%AD%A6/">http://example.com/2022/10/06/%E6%B5%81%E4%BD%93%E5%8A%9B%E5%AD%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8A%9B%E5%AD%A6-%E8%BD%AF%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">力学-软件基础知识</a></div><div class="post_share"><div class="social-share" data-image="/img/AiurBattlefield.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/01/PINN/"><img class="next-cover" src="/img/AiurBattlefield.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">我怎么搭建了一个神经网络来帮我解决PDE：PINN简介</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Zeratul.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Yunfei Gao</div><div class="author-info__description">来自群星之间的游客啊，你喜欢我创建的文献馆吗？</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">这个博客会持续更新的</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%81%E4%BD%93%E9%9D%99%E5%8A%9B%E5%AD%A6"><span class="toc-number">2.</span> <span class="toc-text">流体静力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E5%86%85%E6%91%A9%E6%93%A6%E5%AE%9A%E5%BE%8B"><span class="toc-number">2.1.</span> <span class="toc-text">牛顿内摩擦定律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E5%8A%9B%E7%9B%B8%E5%85%B3"><span class="toc-number">2.2.</span> <span class="toc-text">压力相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E4%BD%93%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%EF%BC%88%E6%AC%A7%E6%8B%89%E5%B9%B3%E8%A1%A1%E6%96%B9%E7%A8%8B%EF%BC%89%EF%BC%9A"><span class="toc-number">2.2.1.</span> <span class="toc-text">流体平衡的微分方程（欧拉平衡方程）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%AD%A2%E7%8A%B6%E6%80%81%E4%B8%8B%EF%BC%8C%E5%8E%8B%E5%8A%9B%E5%BE%AE%E5%85%83%E7%9A%84%E5%A4%A7%E5%B0%8F%EF%BC%9A"><span class="toc-number">2.2.2.</span> <span class="toc-text">静止状态下，压力微元的大小：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%87%E5%8C%80%E5%8A%A0%E9%80%9F%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E5%8E%8B%E5%8A%9B%E5%88%86%E5%B8%83%EF%BC%9A"><span class="toc-number">2.2.3.</span> <span class="toc-text">均匀加速状态下的压力分布：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%80%E9%80%9F%E8%BD%AC%E5%8A%A8%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="toc-number">2.2.4.</span> <span class="toc-text">匀速转动的容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%B0%B4%E5%8E%8B%E5%A4%A7%E5%B0%8F%E8%AE%A1%E7%AE%97"><span class="toc-number">2.3.</span> <span class="toc-text">静水压大小计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%83%85%E5%86%B5"><span class="toc-number">2.3.1.</span> <span class="toc-text">平面情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B2%E9%9D%A2%E6%83%85%E5%86%B5"><span class="toc-number">2.3.2.</span> <span class="toc-text">曲面情况</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-number">3.</span> <span class="toc-text">流体动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%B9%E7%BA%BF"><span class="toc-number">3.1.</span> <span class="toc-text">迹线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%BA%BF"><span class="toc-number">3.2.</span> <span class="toc-text">流线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%80%A7%E6%96%B9%E7%A8%8B%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">连续性方程（重要）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%96%B9%E7%A8%8B"><span class="toc-number">3.4.</span> <span class="toc-text">伯努利方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%96%B9%E7%A8%8B%E7%9A%84%E5%BA%94%E7%94%A81%EF%BC%9A%E6%9B%B2%E7%8E%87%E5%BE%88%E5%B0%8F%EF%BC%9A-r-rightarrow-inf"><span class="toc-number">3.4.1.</span> <span class="toc-text">伯努利方程的应用1：曲率很小：$r \rightarrow \inf$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%96%B9%E7%A8%8B%E7%9A%84%E5%BA%94%E7%94%A82%EF%BC%9A%E5%9C%A8%E6%95%B4%E4%B8%AA%E6%B5%81%E5%9C%BA%E6%9C%BA%E6%A2%B0%E8%83%BD%E5%AE%88%E6%81%92%E7%9A%84%E8%AF%9D%EF%BC%9A"><span class="toc-number">3.4.2.</span> <span class="toc-text">伯努利方程的应用2：在整个流场机械能守恒的话：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E6%96%B9%E7%A8%8B"><span class="toc-number">3.5.</span> <span class="toc-text">动量方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E7%9F%A9%E6%96%B9%E7%A8%8B"><span class="toc-number">3.6.</span> <span class="toc-text">动量矩方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">3.7.</span> <span class="toc-text">伯努利方程的补充：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B7%E8%AF%BA%E6%95%B0-Re"><span class="toc-number">3.7.1.</span> <span class="toc-text">雷诺数 Re</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B2%BF%E7%A8%8B%E8%83%BD%E9%87%8F%E6%8D%9F%E5%A4%B1"><span class="toc-number">3.7.2.</span> <span class="toc-text">沿程能量损失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E8%83%BD%E9%87%8F%E6%8D%9F%E5%A4%B1"><span class="toc-number">3.7.3.</span> <span class="toc-text">局部能量损失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8E%E5%B1%80%E9%83%A8%E8%83%BD%E9%87%8F%E6%8D%9F%E5%A4%B1%EF%BC%8CK%E7%9A%84%E5%8F%96%E5%80%BC"><span class="toc-number">3.7.4.</span> <span class="toc-text">对于局部能量损失，K的取值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%85%A5%E8%BF%99%E4%BF%A9%E4%B9%8B%E5%90%8E%E7%9A%84%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%96%B9%E7%A8%8B%EF%BC%9A"><span class="toc-number">3.7.5.</span> <span class="toc-text">加入这俩之后的伯努利方程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%83%BD%E9%87%8F%E7%9A%84%E6%8D%9F%E5%A4%B1%EF%BC%9A%E5%85%B6%E4%BB%96"><span class="toc-number">3.7.6.</span> <span class="toc-text">关于能量的损失：其他</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/06/%E6%B5%81%E4%BD%93%E5%8A%9B%E5%AD%A6/" title="流体力学"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="流体力学"/></a><div class="content"><a class="title" href="/2022/10/06/%E6%B5%81%E4%BD%93%E5%8A%9B%E5%AD%A6/" title="流体力学">流体力学</a><time datetime="2022-10-06T07:20:13.000Z" title="Created 2022-10-06 15:20:13">2022-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/01/PINN/" title="我怎么搭建了一个神经网络来帮我解决PDE：PINN简介"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我怎么搭建了一个神经网络来帮我解决PDE：PINN简介"/></a><div class="content"><a class="title" href="/2022/08/01/PINN/" title="我怎么搭建了一个神经网络来帮我解决PDE：PINN简介">我怎么搭建了一个神经网络来帮我解决PDE：PINN简介</a><time datetime="2022-08-01T06:38:27.000Z" title="Created 2022-08-01 14:38:27">2022-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" title="网络协议总结"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网络协议总结"/></a><div class="content"><a class="title" href="/2022/06/05/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" title="网络协议总结">网络协议总结</a><time datetime="2022-06-05T05:51:08.000Z" title="Created 2022-06-05 13:51:08">2022-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="6种设计模式"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="6种设计模式"/></a><div class="content"><a class="title" href="/2022/06/04/6%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="6种设计模式">6种设计模式</a><time datetime="2022-06-04T08:23:45.000Z" title="Created 2022-06-04 16:23:45">2022-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/31/UML/" title="UML"><img src="/img/AiurBattlefield.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="UML"/></a><div class="content"><a class="title" href="/2022/05/31/UML/" title="UML">UML</a><time datetime="2022-05-31T11:57:01.000Z" title="Created 2022-05-31 19:57:01">2022-05-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Yunfei Gao</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
